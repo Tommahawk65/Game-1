@@ -49,53 +49,51 @@ document.addEventListener('DOMContentLoaded', () => {
             name: 'squirtle',
             img: 'assets/images/squirtle.png'
         },
-    ]
+    ];
     
     let flippedCard = false;
     let firstCard, secondCard;
     let gameLock = false;
     let pairs = 6;
     const card = document.querySelectorAll('.card');
-    let cardsChosen = []
-    let cardsChosenId = []
+    let cardsChosen = [];
+    let cardsChosenId = [];
     document.getElementById("main-theme").play();
     document.getElementById("reset-btn").addEventListener('click', reset);
-    cardArray.sort(() => 0.5 - Math.random())
-    const grid = document.getElementById('game-content')
+    cardArray.sort(() => 0.5 - Math.random());
+    const grid = document.getElementById('game-content');
     
     
     function board() {
         for (let i = 0; i < cardArray.length; i++) {
-            var gamecard = document.createElement('div')
+            var gamecard = document.createElement('div');
             gamecard.className = 'card';
-            gamecard.setAttribute('data-id', i)
-            gamecard.innerHTML = '<img class="back-face" src="assets/images/pokeball.png" alt="back card">'
+            gamecard.setAttribute('data-id', i);
+            gamecard.innerHTML = '<img class="back-face" src="assets/images/pokeball.png" alt="back card">';
             gamecard.addEventListener('click', cardFlip);
-            grid.appendChild(gamecard)
+            grid.appendChild(gamecard);
         }
-            var donemsg = document.createElement('div')
+            var donemsg = document.createElement('div');
             donemsg.id = 'done-msg';
-            donemsg.innerHTML = '<p id="win-msg"></p><p>You Win!</p><button id="replay-btn">Play Again</button>'
-            grid.appendChild(donemsg)
+            donemsg.innerHTML = '<p id="win-msg"></p><p>You Win!</p><button id="replay-btn">Play Again</button>';
+            grid.appendChild(donemsg);
     }
     
-    board()
+    board();
 
     function cardFlip() {
-        this.className = ('card flip')
-        let cardId = this.getAttribute('data-id')
-        var front = document.createElement('img')
-        front.className = "front-face"
+        this.className = ('card flip');
+        let cardId = this.getAttribute('data-id');
+        var front = document.createElement('img');
+        front.className = "front-face";
         front.src = cardArray[cardId].img;
-        front.alt = "front card" 
-        cardsChosen.push(cardArray[cardId].name)
-        cardsChosenId.push(cardId)
+        front.alt = "front card" ;
+        cardsChosen.push(cardArray[cardId].name);
+        cardsChosenId.push(cardId);
     
         if (gameLock) return;
         if (this === firstCard) return;
-        this.appendChild(front)
-        const optionOneId = cardsChosenId[0]
-        const optionTwoId = cardsChosenId[1]
+        this.appendChild(front);
        
         if (!flippedCard) {
             flippedCard = true;
@@ -105,14 +103,14 @@ document.addEventListener('DOMContentLoaded', () => {
             secondCard = this;
             if (cardsChosen[0] === cardsChosen[1]) {
                 
-                match ()
+                match ();
     
             } else { 
                 // Not a match
-                flipBack ()    
+                flipBack ();    
             }
-            cardsChosen = []
-            cardsChosenId = []
+            cardsChosen = [];
+            cardsChosenId = [];
         }
 
         // Check For Match 
@@ -147,7 +145,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Win Message
     if (pairs <= 0) {
-        const done = document.getElementById('done-msg')
+        const done = document.getElementById('done-msg');
         document.getElementById("replay-btn").addEventListener('click', reset);
         setTimeout(() => {
         done.style.display = 'block';
@@ -160,12 +158,12 @@ document.addEventListener('DOMContentLoaded', () => {
         setTimeout(() => {
             flippedCard = false;
             gameLock = false;
-            cardsChosen = []
-            cardsChosenId = []
+            cardsChosen = [];
+            cardsChosenId = [];
             pairs = 6;
-            cardArray.sort(() => 0.5 - Math.random())
+            cardArray.sort(() => 0.5 - Math.random());
             card.forEach(cardBg => cardBg.classList.remove('flip'));
-            board ()
+            board ();
 
             }, 800);
         }
@@ -178,4 +176,4 @@ document.addEventListener('DOMContentLoaded', () => {
         
        
 
-})
+});
