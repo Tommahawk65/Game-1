@@ -134,54 +134,301 @@ header {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 .social-footer {
-    margin-top: 100px;
-    padding: 1rem;
-    border-top: 5px solid white;
-    border-top-width: 3px;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-align-items: center;
-        -ms-flex-align: center;
-            align-items: center;
-    -webkit-justify-content: space-between;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
+  margin-top: 100px;
+  padding: 1rem;
+  border-top: 5px solid white;
+  border-top-width: 3px;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+.logo{
+  height: 40px;
+  padding: 0;
+  font-size: 2rem;
+  padding-left: 20px;
+  filter: invert(100%);
+}
+.social-footer .social-footer-icons a:last-of-type {
+  margin-right: 0;
+}
+
+.social-footer .social-footer-icons .fa {
+  font-size: 2rem;
+  padding-left: 20px;
+  color: #fefefe;
+}
+
+.social-footer .social-footer-icons .fa:hover {
+  color: #4a4a4a;
+  transition: color 0.3s ease-in;
+}
+
+
+
+@media only screen and (max-width: 730px) {
+  #game-content  {
+    height: 750px;
+    width: 90%;
   }
-  .logo{
-    height: 40px;
-    padding: 0;
-    font-size: 2rem;
-    padding-left: 20px;
-    filter: invert(100%);
+
+  .content .card {
+      
+      width: 90%;
   }
-  .social-footer .social-footer-icons a:last-of-type {
-    margin-right: 0;
+}
+
+
+@media only screen and (max-width: 552px) {
+  #game-content  {
+    height: 350px;
+    width: 90%;
   }
   
-  .social-footer .social-footer-icons .fa {
-    font-size: 2rem;
-    padding-left: 20px;
-    color: #fefefe;
+  .card,
+  .flip,
+  .front-face,
+  .back-face,
+  .green-light,
+  .red-light {
+     
+      width: 100px;
+      height: 100px;
+}
+  .card {
+      width: 100px;
+      max-width: 100px;
+  }
+
+
+}
+
+
+@media only screen and (max-width: 504px) {
+  #game-content  {
+    height: 500px;
+    width: 90%;
   }
   
-  .social-footer .social-footer-icons .fa:hover {
-    color: #4a4a4a;
-    transition: color 0.3s ease-in;
+  .card,
+  .flip,
+  .front-face,
+  .back-face,
+  .green-light,
+  .red-light {
+     
+     
+      width: 120px;
+      height: 120px;
+}
+  .card {
+      width: 120px;
+      max-width: 120px;
+  }
+
+
+}
+
+@media only screen and (max-width: 449px) {
+
+  .pokemon-logo {
+      height: auto;
+      max-width: 90%;;
+      
   }
   
+  #game-content  {
+    height: 500px;
+    width: 90%;
+  }
+  
+  .card,
+  .flip,
+  .front-face,
+  .back-face,
+  .green-light,
+  .red-light {
+     
+     
+      width: 110px;
+      height: 110px;
+}
+  .card {
+      width: 110px;
+      max-width: 110px;
+  }
+
+
+}
+
+
+@media only screen and (max-width: 415px) {
+
+  
+  
+  #game-content  {
+    height: 500px;
+    width: 90%;
+  }
+  
+  .card,
+  .flip,
+  .front-face,
+  .back-face,
+  .green-light,
+  .red-light {
+     
+     
+      width: 100px;
+      height: 100px;
+}
+  .card {
+      width: 100px;
+      max-width: 100px;
+  }
+
+
+}
+
+
+@media only screen and (max-width: 382px) {
+
+  
+  
+  #game-content  {
+    height: 500px;
+    width: 90%;
+  }
+  
+  .card,
+  .flip,
+  .front-face,
+  .back-face,
+  .green-light,
+  .red-light {
+     
+     
+      width: 90px;
+      height: 90px;
+}
+  .card {
+      width: 90px;
+      max-width: 90px;
+  }
+
+
+}
+
+
+@media only screen and (max-width: 349px) {
+
+  
+  
+  #game-content  {
+    height: 450px;
+    width: 90%;
+  }
+  
+  .card,
+  .flip,
+  .front-face,
+  .back-face,
+  .green-light,
+  .red-light {
+     
+     
+      width: 80px;
+      height: 80px;
+}
+  .card {
+      width: 80px;
+      max-width: 80px;
+  }
+
+
+}
+
+
+@media only screen and (max-width: 315px) {
+
+  
+  
+  #game-content  {
+    height: 300px;
+    width: 90%;
+  }
+  
+  .card,
+  .flip,
+  .front-face,
+  .back-face,
+  .green-light,
+  .red-light {
+     
+     
+      width: 70px;
+      height: 70px;
+}
+  .card {
+      width: 70px;
+      max-width: 70px;
+  }
+
+
+}
+
+
+@media only screen and (max-width: 298px) {
+  #game-content  {
+      height: 300px;
+      width: 90%;
+    }
+    
+    .card,
+    .flip,
+    .front-face,
+    .back-face,
+    .green-light,
+    .red-light {
+       
+       
+        width: 60px;
+        height: 60px;
+  }
+    .card {
+        width: 60px;
+        max-width: 60px;
+    }
+
+
+   .social-footer-icons,
+   .logo {
+      
+       display: none;
+      
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
