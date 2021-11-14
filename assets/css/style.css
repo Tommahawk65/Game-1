@@ -25,6 +25,99 @@ header {
     background-size: cover;
 }
 
+#game-content {
+    
+  display: flex;
+  flex-wrap: wrap;
+  height: 500px;
+  width: 700px;
+  border: 5px dotted white;
+  padding-top: 50px;
+  padding-bottom: 40px;
+  margin: 0 auto 10px auto;
+  justify-content: center;
+  align-items: center;
+  perspective: 1000px;
+  text-align: center;
+}
+
+.card {
+  display: flex;
+  margin: 5px;
+  margin-bottom: 0;
+  height: 150px;
+ 
+  width: 100%;
+  max-width: 150px;
+  position: relative;
+  transform: scale(1);
+  transform-style: preserve-3d;
+  transition: transform 0.5s;
+}
+
+
+
+
+
+
+#reset {
+  text-align: center;
+  padding-right: 150px;
+  margin-top: 25px;
+}
+
+#reset-btn {
+  position: absolute;
+  height: 50px;
+  width: 150px;
+  font-size: large;
+  color: white;
+  background-color: transparent;
+  border: dotted white;
+  
+}
+
+#reset-btn:hover {
+  background-color: #4a4a4a93;
+  cursor:pointer;
+}
+
+#done-msg {
+  display: none;
+  font-size: 1.5rem;
+  position: absolute;
+  margin: auto;
+  height: 250px;
+  max-width: 500px;
+  width: 90%;
+  z-index: 10;
+  background-color:rgb(252, 252, 252);
+  border: solid 20px;
+  border-image: url("../images/border.png") 30 round;
+  padding-top: 50px;
+}
+
+#done-msg p{
+  margin-bottom: 10px;    
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 .social-footer {
     margin-top: 100px;
