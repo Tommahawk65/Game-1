@@ -142,9 +142,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 gameLock = false;
             }, 2600);
         }
- 
- 
-    
 
     // Win Message
     if (pairs <= 0) {
@@ -153,5 +150,27 @@ document.addEventListener('DOMContentLoaded', () => {
        }, 1000);   
       }
     }
+
+    function reset() {
+        setTimeout(() => {
+            flippedCard = false;
+            gameLock = false;
+            cardsChosen = []
+            cardsChosenId = []
+            pairs = 6;
+            cardArray.sort(() => 0.5 - Math.random())
+            card.forEach(cardBg => cardBg.classList.remove('flip'));
+            board ()
+
+            }, 800);
+        }
+            
+           
+            
+          
+    
+            
+        
+       
 
 })
