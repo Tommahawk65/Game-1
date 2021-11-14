@@ -1,0 +1,65 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,600&display=swap');
+
+
+.pokemon-logo {
+    height: 150px;
+    display:inline-block;
+    margin: 0 auto;
+    border-bottom: 5px solid white;
+}
+
+header {
+    width:100%;
+    text-align:center;
+   
+    background-color: rgba(206,231,249,255);
+    padding-bottom: 40px;
+    padding-top: 40px;
+}
+
+.content {
+    
+    background-image: url("../images/8\ bit\ background.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+
+.social-footer {
+    margin-top: 100px;
+    padding: 1rem;
+    border-top: 5px solid white;
+    border-top-width: 3px;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-justify-content: space-between;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  .logo{
+    height: 40px;
+    padding: 0;
+    font-size: 2rem;
+    padding-left: 20px;
+    filter: invert(100%);
+  }
+  .social-footer .social-footer-icons a:last-of-type {
+    margin-right: 0;
+  }
+  
+  .social-footer .social-footer-icons .fa {
+    font-size: 2rem;
+    padding-left: 20px;
+    color: #fefefe;
+  }
+  
+  .social-footer .social-footer-icons .fa:hover {
+    color: #4a4a4a;
+    transition: color 0.3s ease-in;
+  }
+  
