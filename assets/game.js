@@ -58,6 +58,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const card = document.querySelectorAll('.card');
     let cardsChosen = []
     let cardsChosenId = []
+    document.getElementById("main-theme").play();
     document.getElementById("reset-btn").addEventListener('click', reset);
     document.getElementById("replay-btn").addEventListener('click', reset);
     cardArray.sort(() => 0.5 - Math.random())
@@ -119,6 +120,7 @@ document.addEventListener('DOMContentLoaded', () => {
             firstCard.classList.add('green-light');
             secondCard.removeEventListener('click', cardFlip);
             secondCard.classList.add('green-light');
+            document.getElementById("match-audio").play();
             }, 1200); 
             pairs --;
         }
@@ -129,6 +131,7 @@ document.addEventListener('DOMContentLoaded', () => {
             gameLock = true;
             firstCard.classList.add('red-light');
             secondCard.classList.add('red-light');
+            document.getElementById("incorrect-audio").play();
             }, 1200);
         
             setTimeout(() => {
