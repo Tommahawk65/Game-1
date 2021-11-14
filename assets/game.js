@@ -60,10 +60,9 @@ document.addEventListener('DOMContentLoaded', () => {
     let cardsChosenId = []
     document.getElementById("main-theme").play();
     document.getElementById("reset-btn").addEventListener('click', reset);
-    document.getElementById("replay-btn").addEventListener('click', reset);
     cardArray.sort(() => 0.5 - Math.random())
     const grid = document.getElementById('game-content')
-    const done = document.getElementById('done-msg');
+    
     
     function board() {
         for (let i = 0; i < cardArray.length; i++) {
@@ -73,8 +72,11 @@ document.addEventListener('DOMContentLoaded', () => {
             gamecard.innerHTML = '<img class="back-face" src="assets/images/pokeball.png" alt="back card">'
             gamecard.addEventListener('click', cardFlip);
             grid.appendChild(gamecard)
-            
         }
+            var donemsg = document.createElement('div')
+            donemsg.id = 'done-msg';
+            donemsg.innerHTML = '<p id="win-msg"></p><p>You Win!</p><button id="replay-btn">Play Again</button>'
+            grid.appendChild(donemsg)
     }
     
     board()
@@ -145,6 +147,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Win Message
     if (pairs <= 0) {
+        const done = document.getElementById('done-msg')
+        document.getElementById("replay-btn").addEventListener('click', reset);
         setTimeout(() => {
         done.style.display = 'block';
        }, 1000);   
@@ -152,6 +156,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function reset() {
+        document.getElementById("game-content").innerHTML = ""
         setTimeout(() => {
             flippedCard = false;
             gameLock = false;
