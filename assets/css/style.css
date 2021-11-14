@@ -55,6 +55,35 @@ header {
   transition: transform 0.5s;
 }
 
+.card.flip {
+  transition-duration: 1000ms;
+  transform: rotateY(180deg);
+}
+
+.front-face,
+.back-face {
+  cursor: pointer;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+.front-face {
+  transition-duration: 1000ms;
+  transform: rotateY(180deg);
+}
+
+.green-light {
+  
+  background-color: rgba(45, 216, 29, 0.692);
+  
+}
+
+.red-light{
+  background-color: rgba(209,59,59,0.8);
+}
 
 
 
