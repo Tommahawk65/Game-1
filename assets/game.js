@@ -53,7 +53,6 @@ document.addEventListener('DOMContentLoaded', () => {
     
     let flippedCard = false;
     let firstCard, secondCard;
-    let gameLock = false;
     let pairs = 6;
     const card = document.querySelectorAll('.card');
     let cardsChosen = [];
@@ -91,7 +90,7 @@ document.addEventListener('DOMContentLoaded', () => {
         cardsChosen.push(cardArray[cardId].name);
         cardsChosenId.push(cardId);
     
-        if (gameLock) return;
+       
         if (this === firstCard) return;
         this.appendChild(front);
        
@@ -127,8 +126,9 @@ document.addEventListener('DOMContentLoaded', () => {
         
         // Cards Dont Match
         function flipBack() {
+            
             setTimeout(() => {
-            gameLock = true;
+            
             firstCard.classList.add('red-light');
             secondCard.classList.add('red-light');
             document.getElementById("incorrect-audio").play();
@@ -139,7 +139,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 firstCard.classList.remove('red-light');
                 secondCard.classList.remove('flip');
                 secondCard.classList.remove('red-light');
-                gameLock = false;
+               
             }, 2600);
         }
 
@@ -157,7 +157,6 @@ document.addEventListener('DOMContentLoaded', () => {
         document.getElementById("game-content").innerHTML = ""
         setTimeout(() => {
             flippedCard = false;
-            gameLock = false;
             cardsChosen = [];
             cardsChosenId = [];
             pairs = 6;
