@@ -54,13 +54,19 @@ document.addEventListener('DOMContentLoaded', () => {
     let flippedCard = false;
     let firstCard, secondCard;
     let pairs = 6;
-    const card = document.querySelectorAll('.card');
+    let card = document.getElementsByClassName('card');
     let cardsChosen = [];
     let cardsChosenId = [];
-    document.getElementById("main-theme").play();
     document.getElementById("reset-btn").addEventListener('click', reset);
+    document.getElementById("start-btn").addEventListener('click', hideWelcome);
     cardArray.sort(() => 0.5 - Math.random());
     const grid = document.getElementById('game-content');
+
+    function hideWelcome() {
+        const begin = document.getElementById("intro-msg")
+        begin.style.display = 'none';
+        document.getElementById("main-theme").play();
+    }
     
     
     function board() {
@@ -89,8 +95,6 @@ document.addEventListener('DOMContentLoaded', () => {
         front.alt = "front card" ;
         cardsChosen.push(cardArray[cardId].name);
         cardsChosenId.push(cardId);
-    
-       
         if (this === firstCard) return;
         this.appendChild(front);
        
@@ -161,7 +165,7 @@ document.addEventListener('DOMContentLoaded', () => {
             cardsChosenId = [];
             pairs = 6;
             cardArray.sort(() => 0.5 - Math.random());
-            card.forEach(cardBg => cardBg.classList.remove('flip'));
+            //card.forEach(cardBg => cardBg.classList.remove('flip'));
             board ();
 
             }, 800);

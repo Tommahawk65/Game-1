@@ -113,8 +113,10 @@ header {
   cursor:pointer;
 }
 
-#done-msg {
-  display: none;
+
+
+#done-msg, #intro-msg {
+  
   font-size: 1.5rem;
   position: absolute;
   margin: auto;
@@ -126,6 +128,14 @@ header {
   border: solid 20px;
   border-image: url("../images/border.png") 30 round;
   padding-top: 50px;
+}
+
+#intro-msg {
+  display: block;
+}
+
+#done-msg {
+  display: none;
 }
 
 #done-msg p{
