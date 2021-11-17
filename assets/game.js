@@ -57,6 +57,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let card = document.getElementsByClassName('card');
     let cardsChosen = [];
     let cardsChosenId = [];
+    gamePause = false
     document.getElementById("reset-btn").addEventListener('click', reset);
     document.getElementById("start-btn").addEventListener('click', hideWelcome);
     cardArray.sort(() => 0.5 - Math.random());
@@ -87,6 +88,8 @@ document.addEventListener('DOMContentLoaded', () => {
     board();
 
     function cardFlip() {
+        if (gamePause) {return}; 
+        gamePause = false
         this.className = ('card flip');
         let cardId = this.getAttribute('data-id');
         var front = document.createElement('img');
@@ -97,27 +100,34 @@ document.addEventListener('DOMContentLoaded', () => {
         cardsChosenId.push(cardId);
         if (this === firstCard) return;
         this.appendChild(front);
+
        
         if (!flippedCard) {
             flippedCard = true;
             firstCard = this;
+            gamePause = false;
         } else {
             flippedCard = false;
             secondCard = this;
+        
+        
             if (cardsChosen[0] === cardsChosen[1]) {
                 
                 match ();
     
             } else { 
-                // Not a match
+                
                 flipBack ();    
             }
             cardsChosen = [];
             cardsChosenId = [];
         }
+        
+     
 
         // Check For Match 
         function match() {
+            gamePause = true
             setTimeout(() => {
             firstCard.removeEventListener('click', cardFlip);
             firstCard.classList.add('green-light');
@@ -126,13 +136,15 @@ document.addEventListener('DOMContentLoaded', () => {
             document.getElementById("match-audio").play();
             }, 1200); 
             pairs --;
+            setTimeout(() => {
+                gamePause= false
+            }, 3000);
         }
         
         // Cards Dont Match
         function flipBack() {
-            
+            gamePause = true
             setTimeout(() => {
-            
             firstCard.classList.add('red-light');
             secondCard.classList.add('red-light');
             document.getElementById("incorrect-audio").play();
@@ -143,9 +155,14 @@ document.addEventListener('DOMContentLoaded', () => {
                 firstCard.classList.remove('red-light');
                 secondCard.classList.remove('flip');
                 secondCard.classList.remove('red-light');
-               
             }, 2600);
+            setTimeout(() => {
+            gamePause= false
+        }, 3000);
         }
+
+        //setTimeout(gamePause= false, 1500000);
+  
 
     // Win Message
     if (pairs <= 0) {
