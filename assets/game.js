@@ -58,17 +58,28 @@ document.addEventListener('DOMContentLoaded', () => {
     let cardsChosen = [];
     let cardsChosenId = [];
     gamePause = false
+    let winAudio = document.getElementById("win-audio");
+    let mainTheme = document.getElementById("main-theme");
     document.getElementById("reset-btn").addEventListener('click', reset);
-    document.getElementById("start-btn").addEventListener('click', hideWelcome);
+    document.getElementById("start-btn").addEventListener('click', () => {    
+        hideWelcome();
+        resetAudio();    
+    });
+
     cardArray.sort(() => 0.5 - Math.random());
     const grid = document.getElementById('game-content');
 
     function hideWelcome() {
         const begin = document.getElementById("intro-msg")
         begin.style.display = 'none';
-        document.getElementById("main-theme").play();
+       
     }
     
+    function resetAudio () {
+        mainTheme.currentTime=0;
+        mainTheme.play();
+        winAudio.pause()
+    }
     
     function board() {
         for (let i = 0; i < cardArray.length; i++) {
@@ -161,15 +172,21 @@ document.addEventListener('DOMContentLoaded', () => {
         }, 3000);
         }
 
-        //setTimeout(gamePause= false, 1500000);
+        
   
 
     // Win Message
     if (pairs <= 0) {
         const done = document.getElementById('done-msg');
-        document.getElementById("replay-btn").addEventListener('click', reset);
+        document.getElementById("replay-btn").addEventListener('click', () => {    
+            reset();
+            resetAudio();    
+        });
         setTimeout(() => {
         done.style.display = 'block';
+        winAudio.currentTime=0;
+        winAudio.play();
+        mainTheme.pause()
        }, 1000);   
       }
     }
@@ -182,7 +199,6 @@ document.addEventListener('DOMContentLoaded', () => {
             cardsChosenId = [];
             pairs = 6;
             cardArray.sort(() => 0.5 - Math.random());
-            //card.forEach(cardBg => cardBg.classList.remove('flip'));
             board ();
 
             }, 800);
