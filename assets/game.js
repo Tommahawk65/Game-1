@@ -1,5 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
    
+    // Hidden Pokemon 
     const cardArray = [
         {
             name: 'bulbasaur',
@@ -50,14 +51,15 @@ document.addEventListener('DOMContentLoaded', () => {
             img: 'assets/images/squirtle.png'
         },
     ];
-    
+
+    // Initialise Game
+    gamePause = true
     let flippedCard = false;
     let firstCard, secondCard;
     let pairs = 6;
     let card = document.getElementsByClassName('card');
     let cardsChosen = [];
     let cardsChosenId = [];
-    gamePause = false
     let winAudio = document.getElementById("win-audio");
     let mainTheme = document.getElementById("main-theme");
     document.getElementById("reset-btn").addEventListener('click', reset);
@@ -65,22 +67,24 @@ document.addEventListener('DOMContentLoaded', () => {
         hideWelcome();
         resetAudio();    
     });
-
-    cardArray.sort(() => 0.5 - Math.random());
+    cardArray.sort(() => 0.5 - Math.random()); // Shuffle Cards
     const grid = document.getElementById('game-content');
 
+    // Hide Welcome Message
     function hideWelcome() {
+        gamePause = false
         const begin = document.getElementById("intro-msg")
         begin.style.display = 'none';
-       
     }
     
+    // Restart Main Audio & Pause Win Audio
     function resetAudio () {
         mainTheme.currentTime=0;
         mainTheme.play();
         winAudio.pause()
     }
     
+    // Build Gameboard
     function board() {
         for (let i = 0; i < cardArray.length; i++) {
             var gamecard = document.createElement('div');
@@ -98,6 +102,7 @@ document.addEventListener('DOMContentLoaded', () => {
     
     board();
 
+    // Flip Over Cards
     function cardFlip() {
         if (gamePause) {return}; 
         gamePause = false
@@ -112,7 +117,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (this === firstCard) return;
         this.appendChild(front);
 
-       
+        // Check for Match
         if (!flippedCard) {
             flippedCard = true;
             firstCard = this;
@@ -120,7 +125,6 @@ document.addEventListener('DOMContentLoaded', () => {
         } else {
             flippedCard = false;
             secondCard = this;
-        
         
             if (cardsChosen[0] === cardsChosen[1]) {
                 
@@ -132,51 +136,9 @@ document.addEventListener('DOMContentLoaded', () => {
             }
             cardsChosen = [];
             cardsChosenId = [];
-        }
-        
-     
-
-        // Check For Match 
-        function match() {
-            gamePause = true
-            setTimeout(() => {
-            firstCard.removeEventListener('click', cardFlip);
-            firstCard.classList.add('green-light');
-            secondCard.removeEventListener('click', cardFlip);
-            secondCard.classList.add('green-light');
-            document.getElementById("match-audio").play();
-            }, 1200); 
-            pairs --;
-            setTimeout(() => {
-                gamePause= false
-            }, 3000);
-        }
-        
-        // Cards Dont Match
-        function flipBack() {
-            gamePause = true
-            setTimeout(() => {
-            firstCard.classList.add('red-light');
-            secondCard.classList.add('red-light');
-            document.getElementById("incorrect-audio").play();
-            }, 1200);
-        
-            setTimeout(() => {
-                firstCard.classList.remove('flip');
-                firstCard.classList.remove('red-light');
-                secondCard.classList.remove('flip');
-                secondCard.classList.remove('red-light');
-            }, 2600);
-            setTimeout(() => {
-            gamePause= false
-        }, 3000);
-        }
-
-        
-  
-
-    // Win Message
-    if (pairs <= 0) {
+        } 
+       // Win Message
+       if (pairs <= 0) {
         const done = document.getElementById('done-msg');
         document.getElementById("replay-btn").addEventListener('click', () => {    
             reset();
@@ -187,10 +149,48 @@ document.addEventListener('DOMContentLoaded', () => {
         winAudio.currentTime=0;
         winAudio.play();
         mainTheme.pause()
-       }, 1000);   
+        }, 1000);   
       }
     }
 
+    // Cards Match 
+    function match() {
+        gamePause = true
+        setTimeout(() => {
+        firstCard.removeEventListener('click', cardFlip);
+        firstCard.classList.add('green-light');
+        secondCard.removeEventListener('click', cardFlip);
+        secondCard.classList.add('green-light');
+        document.getElementById("match-audio").play();
+        }, 1200); 
+        pairs --;
+        setTimeout(() => {
+            gamePause= false
+        }, 3000);
+    }
+        
+    // Dont Match
+    function flipBack() {
+        gamePause = true
+        setTimeout(() => {
+        firstCard.classList.add('red-light');
+        secondCard.classList.add('red-light');
+        document.getElementById("incorrect-audio").play();
+        }, 1200);
+        
+        setTimeout(() => {
+            firstCard.classList.remove('flip');
+            firstCard.classList.remove('red-light');
+            secondCard.classList.remove('flip');
+            secondCard.classList.remove('red-light');
+        }, 2600);
+        setTimeout(() => {
+        gamePause= false
+        }, 3000);
+    }
+
+ 
+    // Wipe Game Board
     function reset() {
         document.getElementById("game-content").innerHTML = ""
         setTimeout(() => {
@@ -200,16 +200,8 @@ document.addEventListener('DOMContentLoaded', () => {
             pairs = 6;
             cardArray.sort(() => 0.5 - Math.random());
             board ();
+            resetAudio()
 
-            }, 800);
-        }
-            
-           
-            
-          
-    
-            
-        
-       
-
+        }, 800);
+    }
 });

@@ -1,5 +1,6 @@
-@import url('https://fonts.googleapis.com/css?family=Montserrat:400,600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Castoro&family=Raleway:wght@300&display=swap');
 
+/* Header Element */
 
 .pokemon-logo {
     height: 150px;
@@ -11,24 +12,22 @@
 header {
     width:100%;
     text-align:center;
-   
     background-color: rgba(206,231,249,255);
     padding-bottom: 40px;
     padding-top: 40px;
 }
 
 .content {
-    
     background-image: url("../images/8\ bit\ background.png");
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
+    font-family: 'Castoro', serif;
 }
 
+/* Main Game */
 
-
-#game-content {
-    
+#game-content {  
   display: flex;
   flex-wrap: wrap;
   height: 500px;
@@ -48,7 +47,6 @@ header {
   margin: 5px;
   margin-bottom: 0;
   height: 150px;
- 
   width: 100%;
   max-width: 150px;
   position: relative;
@@ -78,18 +76,14 @@ header {
 }
 
 .green-light {
-  
   background-color: rgba(45, 216, 29, 0.692);
-  
 }
 
 .red-light{
   background-color: rgba(209,59,59,0.8);
 }
 
-
-
-
+/* New Game Buttons */
 
 #reset {
   text-align: center;
@@ -104,8 +98,7 @@ header {
   font-size: large;
   color: white;
   background-color: transparent;
-  border: dotted white;
-  
+  border: dotted white; 
 }
 
 #reset-btn:hover {
@@ -113,7 +106,7 @@ header {
   cursor:pointer;
 }
 
-
+/* Win/Inro Message */
 
 #done-msg, #intro-msg {
   
@@ -142,9 +135,7 @@ header {
   margin-bottom: 50px;    
 }
 
-
-
-
+/* Footer */
 
 .social-footer {
   margin-top: 100px;
@@ -161,6 +152,7 @@ header {
       -ms-flex-pack: justify;
           justify-content: space-between;
 }
+
 .logo{
   height: 40px;
   padding: 0;
@@ -168,6 +160,7 @@ header {
   padding-left: 20px;
   filter: invert(100%);
 }
+
 .social-footer .social-footer-icons a:last-of-type {
   margin-right: 0;
 }
@@ -183,7 +176,7 @@ header {
   transition: color 0.3s ease-in;
 }
 
-
+/* Responsive Sizing For Different Devices */
 
 @media only screen and (max-width: 730px) {
   #game-content  {
@@ -197,7 +190,6 @@ header {
   }
 }
 
-
 @media only screen and (max-width: 552px) {
   #game-content  {
     height: 350px;
@@ -210,7 +202,6 @@ header {
   .back-face,
   .green-light,
   .red-light {
-     
       width: 100px;
       height: 100px;
 }
@@ -218,10 +209,7 @@ header {
       width: 100px;
       max-width: 100px;
   }
-
-
 }
-
 
 @media only screen and (max-width: 504px) {
   #game-content  {
@@ -234,9 +222,7 @@ header {
   .front-face,
   .back-face,
   .green-light,
-  .red-light {
-     
-     
+  .red-light { 
       width: 120px;
       height: 120px;
 }
@@ -244,8 +230,6 @@ header {
       width: 120px;
       max-width: 120px;
   }
-
-
 }
 
 @media only screen and (max-width: 449px) {
@@ -266,9 +250,7 @@ header {
   .front-face,
   .back-face,
   .green-light,
-  .red-light {
-     
-     
+  .red-light {  
       width: 110px;
       height: 110px;
 }
@@ -276,15 +258,10 @@ header {
       width: 110px;
       max-width: 110px;
   }
-
-
 }
-
 
 @media only screen and (max-width: 415px) {
 
-  
-  
   #game-content  {
     height: 500px;
     width: 90%;
@@ -296,8 +273,6 @@ header {
   .back-face,
   .green-light,
   .red-light {
-     
-     
       width: 100px;
       height: 100px;
 }
@@ -305,15 +280,10 @@ header {
       width: 100px;
       max-width: 100px;
   }
-
-
 }
-
 
 @media only screen and (max-width: 382px) {
 
-  
-  
   #game-content  {
     height: 500px;
     width: 90%;
@@ -325,8 +295,6 @@ header {
   .back-face,
   .green-light,
   .red-light {
-     
-     
       width: 90px;
       height: 90px;
 }
@@ -334,28 +302,21 @@ header {
       width: 90px;
       max-width: 90px;
   }
-
-
 }
-
 
 @media only screen and (max-width: 349px) {
 
-  
-  
   #game-content  {
     height: 450px;
     width: 90%;
   }
-  
+
   .card,
   .flip,
   .front-face,
   .back-face,
   .green-light,
   .red-light {
-     
-     
       width: 80px;
       height: 80px;
 }
@@ -363,15 +324,10 @@ header {
       width: 80px;
       max-width: 80px;
   }
-
-
 }
-
 
 @media only screen and (max-width: 315px) {
 
-  
-  
   #game-content  {
     height: 300px;
     width: 90%;
@@ -383,8 +339,6 @@ header {
   .back-face,
   .green-light,
   .red-light {
-     
-     
       width: 70px;
       height: 70px;
 }
@@ -392,8 +346,6 @@ header {
       width: 70px;
       max-width: 70px;
   }
-
-
 }
 
 
@@ -409,8 +361,6 @@ header {
     .back-face,
     .green-light,
     .red-light {
-       
-       
         width: 60px;
         height: 60px;
   }
@@ -419,12 +369,9 @@ header {
         max-width: 60px;
     }
 
-
    .social-footer-icons,
    .logo {
-      
        display: none;
-      
     }
 }
 
