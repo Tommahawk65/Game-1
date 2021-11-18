@@ -76,7 +76,7 @@ document.addEventListener('DOMContentLoaded', () => {
         begin.style.display = 'none';
     }
     
-    // Restart Main Audio & Pause Win Audio
+    // Restart Main Audio & Pause Win Audio 
     function resetAudio () {
         mainTheme.currentTime=0;
         mainTheme.play();
