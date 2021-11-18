@@ -44,16 +44,16 @@ The theme provides a good design language that is already established and recogn
 
 #### Instruction View
 
-![Alt text](assets/images/Mobiile-1.png "Instruction View")
+![Alt text](assets/images/Mobile-1.png "Instruction View")
 
 #### Game Start
-![Alt text](assets/images/Mobiile-2.png "Game Start")
+![Alt text](assets/images/Mobile-2.png "Game Start")
 
 #### Flipping Cards
-![Alt text](assets/images/Mobiile-3.png "Flipping Cards")
+![Alt text](assets/images/Mobile-3.png "Flipping Cards")
 
 #### Win Message"
-![Alt text](assets/images/Mobiile-4.png "Win Message"")
+![Alt text](assets/images/Mobile-4.png "Win Message"")
 
 ## Features 
 
