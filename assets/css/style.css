@@ -179,7 +179,7 @@ header {
 /* Responsive Sizing For Different Devices */
 
 @media only screen and (max-width: 730px) {
-  
+
   #game-board  {
     height: 750px;
     width: 90%;
