@@ -21,7 +21,7 @@ The theme provides a good design language that is already established and recogn
 #### Colour Scheme
 -   The main colours are Red, Green and Yellow. This matches with the already established colour scheme of Pokemon.
 #### Typography
--   I used Castoro font as the main font used fort the whole website with Sans Serif as the fallback font in case for any reason the font isn't being imported into the site correctly. I initially tried an 8 bit style font, however I opted for an easier to read alternative.
+-   I used Castoro font as the main font used for the whole website with Sans Serif as the fallback font in case for any reason the font isn't being imported into the site correctly. I initially tried an 8 bit style font, however I opted for an easier to read alternative.
 #### Imagery
 -   All of the images and logos are sourced from the original IP, I was able to find everything I needed by searching online for assets which allowed the game to keep the authentic look of Pokemon.
 
@@ -71,7 +71,7 @@ __Instruction &  Win Pop Up__
 
   - The footer section includes links to the relevant social media sites for Pokemon (currently left as the default sites). The links will open to a new tab to allow easy navigation for the user. 
 
-  - The footer is valuable to as it can link the user to other brand related webistes for marketing purposes.
+  - The footer is valuable as it links the user to other brand related webistes for marketing purposes.
 
   __Responsive On All Device Sizes__ 
 
@@ -86,7 +86,7 @@ __Instruction &  Win Pop Up__
 
 - __Score Counter__ 
 
-  - Adding a score counter which kept track of how many turns it took to win would add extra value to the game. it could be shown at the end along with the win message.
+  - Adding a score counter to keep track of how many turns it took to win would add extra value to the game. It could be shown at the end along with the win message.
 
   __High Score Leader Board__ 
 
@@ -110,13 +110,13 @@ __Instruction &  Win Pop Up__
 1. [Hover.css:](https://ianlunn.github.io/Hover/)
     - Hover.css was used on the Social Media icons in the footer and New Game button to add the float transition while being hovered over.
 1. [Google Fonts:](https://fonts.google.com/)
-    - Google fonts were used to import the 'Titillium Web' font into the style.css file which is used on all pages throughout the project.
+    - Google fonts were used to import the 'Castoro Web' font into the style.css file which is used on all pages throughout the project.
 1. [Font Awesome:](https://fontawesome.com/)
     - Font Awesome was used on all pages throughout the website to add icons for aesthetic and UX purposes.
 1. [GitHub:](https://github.com/)
     - GitHub is used to store the projects code after being pushed from Git.
-1. [Wirefrramepro:](https://wireframepro.mockflow.com/)
-    - Wirefrramepro was used to create the wireframes during the design process.
+1. [Wireframepro:](https://wireframepro.mockflow.com/)
+    - Wireframepro was used to create the wireframes during the design process.
 
 ## Testing 
 

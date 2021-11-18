@@ -53,11 +53,10 @@ document.addEventListener('DOMContentLoaded', () => {
     ];
 
     // Initialise Game
-    gamePause = true
+    let gamePause = true;
     let flippedCard = false;
     let firstCard, secondCard;
     let pairs = 6;
-    let card = document.getElementsByClassName('card');
     let cardsChosen = [];
     let cardsChosenId = [];
     let winAudio = document.getElementById("win-audio");
@@ -72,8 +71,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Hide Welcome Message
     function hideWelcome() {
-        gamePause = false
-        const begin = document.getElementById("intro-msg")
+        gamePause = false;
+        const begin = document.getElementById("intro-msg");
         begin.style.display = 'none';
     }
     
@@ -81,7 +80,7 @@ document.addEventListener('DOMContentLoaded', () => {
     function resetAudio () {
         mainTheme.currentTime=0;
         mainTheme.play();
-        winAudio.pause()
+        winAudio.pause();
     }
     
     // Build Gameboard
@@ -104,8 +103,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Flip Over Cards
     function cardFlip() {
-        if (gamePause) {return}; 
-        gamePause = false
+        if (gamePause) {return;}
+        gamePause = false;
         this.className = ('card flip');
         let cardId = this.getAttribute('data-id');
         var front = document.createElement('img');
@@ -126,12 +125,9 @@ document.addEventListener('DOMContentLoaded', () => {
             flippedCard = false;
             secondCard = this;
         
-            if (cardsChosen[0] === cardsChosen[1]) {
-                
+            if (cardsChosen[0] === cardsChosen[1]) {  
                 match ();
-    
             } else { 
-                
                 flipBack ();    
             }
             cardsChosen = [];
@@ -140,38 +136,35 @@ document.addEventListener('DOMContentLoaded', () => {
        // Win Message
        if (pairs <= 0) {
         const done = document.getElementById('done-msg');
-        document.getElementById("replay-btn").addEventListener('click', () => {    
-            reset();
-            resetAudio();    
-        });
+        document.getElementById("replay-btn").addEventListener('click', reset);
         setTimeout(() => {
         done.style.display = 'block';
         winAudio.currentTime=0;
         winAudio.play();
-        mainTheme.pause()
+        mainTheme.pause();
         }, 1000);   
       }
     }
 
     // Cards Match 
     function match() {
-        gamePause = true
+        gamePause = true;
         setTimeout(() => {
         firstCard.removeEventListener('click', cardFlip);
         firstCard.classList.add('green-light');
         secondCard.removeEventListener('click', cardFlip);
         secondCard.classList.add('green-light');
         document.getElementById("match-audio").play();
-        }, 1200); 
+        }, 1600); 
         pairs --;
         setTimeout(() => {
-            gamePause= false
+            gamePause= false;
         }, 3000);
     }
         
     // Dont Match
     function flipBack() {
-        gamePause = true
+        gamePause = true;
         setTimeout(() => {
         firstCard.classList.add('red-light');
         secondCard.classList.add('red-light');
@@ -185,14 +178,14 @@ document.addEventListener('DOMContentLoaded', () => {
             secondCard.classList.remove('red-light');
         }, 2600);
         setTimeout(() => {
-        gamePause= false
+        gamePause= false;
         }, 3000);
     }
 
  
     // Wipe Game Board
     function reset() {
-        document.getElementById("game-content").innerHTML = ""
+        document.getElementById("game-content").innerHTML = "";
         setTimeout(() => {
             flippedCard = false;
             cardsChosen = [];
@@ -200,8 +193,7 @@ document.addEventListener('DOMContentLoaded', () => {
             pairs = 6;
             cardArray.sort(() => 0.5 - Math.random());
             board ();
-            resetAudio()
-
+            resetAudio();
         }, 800);
     }
 });

@@ -110,7 +110,7 @@ header {
 
 #done-msg, #intro-msg {
   
-  font-size: 1.5rem;
+  font-size: 20px;
   position: absolute;
   margin: auto;
   height: 250px;
@@ -125,15 +125,19 @@ header {
 
 #intro-msg {
   display: block;
+  height: 300px;
+  padding-top: 3%;
 }
 
 #done-msg {
   display: none;
+  font-size: 30px;
 }
 
-#done-msg p{
-  margin-bottom: 50px;    
-}
+#start-btn, #replay-btn {
+  font-size: large;
+}   
+
 
 /* Footer */
 
@@ -375,7 +379,11 @@ header {
     }
 }
 
-
+@media only screen and (max-width: 298px) {
+    #intro-msg {
+      font-size: 18px;
+  }
+}
 
 
 
