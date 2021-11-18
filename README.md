@@ -44,16 +44,16 @@ The theme provides a good design language that is already established and recogn
 
 #### Instruction View
 
-<img src="assets/images/Mobile-1.png" height="200">
+<img src="assets/images/Mobile-1.png" height="800">
 
 #### Game Start
-![Alt text](assets/images/Mobile-2.png "Game Start")
+<img src="assets/images/Mobile-2.png" height="800">
 
 #### Flipping Cards
-![Alt text](assets/images/Mobile-3.png "Flipping Cards")
+<img src="assets/images/Mobile-3.png" height="800">
 
 #### Win Message"
-![Alt text](assets/images/Mobile-4.png "Win Message")
+<img src="assets/images/Mobile-4.png" height="800">
 
 ## Features 
 
