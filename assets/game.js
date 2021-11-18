@@ -67,7 +67,7 @@ document.addEventListener('DOMContentLoaded', () => {
         resetAudio();    
     });
     cardArray.sort(() => 0.5 - Math.random()); // Shuffle Cards
-    const grid = document.getElementById('game-content');
+    const grid = document.getElementById('game-board');
 
     // Hide Welcome Message
     function hideWelcome() {
@@ -87,7 +87,7 @@ document.addEventListener('DOMContentLoaded', () => {
     function board() {
         for (let i = 0; i < cardArray.length; i++) {
             var gamecard = document.createElement('div');
-            gamecard.className = 'card';
+            gamecard.className = 'pokeball';
             gamecard.setAttribute('data-id', i);
             gamecard.innerHTML = '<img class="back-face" src="assets/images/pokeball.png" alt="back card">';
             gamecard.addEventListener('click', cardFlip);
@@ -105,7 +105,7 @@ document.addEventListener('DOMContentLoaded', () => {
     function cardFlip() {
         if (gamePause) {return;}
         gamePause = false;
-        this.className = ('card flip');
+        this.className = ('pokeball flip');
         let cardId = this.getAttribute('data-id');
         var front = document.createElement('img');
         front.className = "front-face";
@@ -182,10 +182,9 @@ document.addEventListener('DOMContentLoaded', () => {
         }, 3000);
     }
 
- 
     // Wipe Game Board
     function reset() {
-        document.getElementById("game-content").innerHTML = "";
+        document.getElementById("game-board").innerHTML = "";
         setTimeout(() => {
             flippedCard = false;
             cardsChosen = [];
