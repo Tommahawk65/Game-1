@@ -184,7 +184,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Wipe Game Board
     function reset() {
-        document.getElementById("game-board").innerHTML = "";
+        document.getElementById("game-board").innerHTML = ""
         setTimeout(() => {
             flippedCard = false;
             cardsChosen = [];
