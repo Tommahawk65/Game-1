@@ -116,7 +116,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (this === firstCard) return;
         this.appendChild(front);
 
-        // Check for Match
+        // Check Match
         if (!flippedCard) {
             flippedCard = true;
             firstCard = this;
